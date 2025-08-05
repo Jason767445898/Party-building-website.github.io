@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>党员服务平台</title>
+    <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+    <script src="js/auth-interceptor.js"></script> <!-- 新增认证拦截器 -->
+    <nav class="sidebar">
+        <div class="user-info">
+            <img src="picture/userimage.png" alt="用户头像" class="avatar">
+            <span class="username" id="memberUsername"></span>
+            <button onclick="logout()" class="logout-btn">退出登录</button>
+            <button onclick="window.location.href='party-member-dashboard.html'" class="back-btn">返回主页</button>
+        </div>
+        <ul class="menu">
+            <li><a href="party-study.html">党课学习</a>
+                <ul class="submenu">
+                    <li><a href="https://www.12371.cn/special/dk/">全国党性知识</a></li>
+                    <li><a href="party-study.html#local">视频学习知识</a></li>
+                </ul>
+            </li>
+            <li><a href="countrynews.html">资讯了解</a></li>
+            
+            <li><a href="#development">党员发展</a>
+                
+            </li>
+            <li><a href="personal-center.html">个人中心</a>
+                <ul class="submenu">
+                    <li><a href="personal-center.html#notifications">我的</a></li>
+                    <li><a href="personal-center.html#ai">人工客服</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main class="content">
+        <div class="study-cards">
+            <div class="study-card">
+                <img src="picture/会晤走红毯.jpg" alt="习近平同哈萨克斯坦总统托卡耶夫举行会谈">
+                <div class="study-card-content">
+                    <h3>习近平同哈萨克斯坦总统托卡耶夫举行会谈</h3>
+                    <p>深入学习贯彻习近平新时代中国特色社会主义思想</p>
+                    
+                </div>
+            </div>
+            
+            <div class="study-card">
+                <img src="picture/背景.jpeg" alt="党的理论知识学习">
+                <div class="study-card-content">
+                    <h3>党的理论知识学习</h3>
+                    <p>全面系统学习党的理论知识，提高政治素养</p>
+                    
+                </div>
+            </div>
+            
+            <div class="study-card">
+                <img src="picture/首页2.jpg" alt="本地党建工作">
+                <div class="study-card-content">
+                    <h3>本地党建工作学习</h3>
+                    <p>了解本地党建工作动态，参与基层党建活动</p>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="development-section" id="development">
+            <h2 class="section-title">党员发展流程</h2>
+            <div class="development-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-header" onclick="toggleTimelineContent(this)">
+                        <div class="timeline-number">1</div>
+                        <h3>&nbsp;&nbsp;申请入党</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>递交入党申请书</li>
+                            <li>同入党申请人谈话（收到入党申请书1个月内谈话）</li>
+                            <li>党员推荐（6个月以上才可被推荐）</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header" onclick="toggleTimelineContent(this)">
+                        <div class="timeline-number">2</div>
+                        <h3>&nbsp;&nbsp;成为入党积极分子</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>支委会或支部大会，6个月以上讨论确定积极分子</li>
+                            <li>入党积极分子备案</li>
+                            <li>入党积极分子考察登记</li>
+                            <li>积极分子思想汇报（每季度一份，共四份）</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header" onclick="toggleTimelineContent(this)">
+                        <div class="timeline-number">3</div>
+                        <h3>&nbsp;&nbsp;成为发展对象</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>支委会或支部大会，确定为积极分子一年后讨论确定发展对象</li>
+                            <li>发展对象公示（公示五个工作日）</li>
+                            <li>发展对象备案</li>
+                            <li>政审和培训</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header" onclick="toggleTimelineContent(this)">
+                        <div class="timeline-number">4</div>
+                        <h3>&nbsp;&nbsp;成为预备党员</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>支委会会议讨论并提交支部大会表决</li>
+                            <li>支部报预审请示</li>
+                            <li>党委预审</li>
+                            <li>填写入党志愿书</li>
+                            <li>预备党员考察（每季度一次）</li>
+                            <li>预备党员思想汇报（每半年一份）</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header" onclick="toggleTimelineContent(this)">
+                        <div class="timeline-number">5</div>
+                        <h3>&nbsp;&nbsp;转为正式党员</h3>
+                        <span class="toggle-icon">+</span>
+                    </div>
+                    <div class="timeline-content">
+                        <ul>
+                            <li>提交转正申请书（预备期满前一周提出）</li>
+                            <li>支委会讨论并提交支部大会表决</li>
+                            <li>拟转为正式党员的公示</li>
+                            <li>转为正式党员公示（公示五个工作日）</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="js/party-member.js"></script>
+    <script src="js/mobile-nav.js"></script>
+</body>
+</html>

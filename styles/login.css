@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+}
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/picture/背景.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.8;  /* 调整背景透明度 */
+    z-index: -1;  /* 确保背景在最底层 */
+}
+
+.login-select-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.login-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.login-card {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.login-card:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95);  /* 半透明白色背景 */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 1;  /* 确保登录框在背景之上 */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #c12c1f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d6362b;
+}
+
+/* 添加头部样式 */
+.header {
+    background-color: #c12c1f;
+    color: white;
+    padding: 15px 20px;
+    position: relative;
+    z-index: 1;  /* 确保header在背景之上 */
+}
+
+.back-btn {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid white;
+    border-radius: 4px;
+}
+
+.back-btn:hover {
+    background-color: white;
+    color: #c12c1f;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .form-group input {
+        font-size: 16px; /* 防止iOS自动放大 */
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+    .back-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+} 

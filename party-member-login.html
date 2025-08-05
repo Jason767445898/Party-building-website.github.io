@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>党员登录 - 党建网站</title>
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+<body>
+    <div class="background-container"></div>
+    
+    <header class="header">
+        <h1>党建网站</h1>
+        <a href="index.html" class="back-btn">返回首页</a>
+    </header>
+
+    <div class="login-container">
+        <h2>党员登录</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">党员编号/手机号</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit">登录</button>
+            <div id="errorMessage" style="color: red; margin-top: 10px; display: none;"></div>
+        </form>
+    </div>
+    
+</body>
+<!-- 在 body 标签结束前 -->
+<script src="js/login.js"></script>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理员后台 - 党建网站</title>
+    <link rel="stylesheet" href="styles/admin-dashboard.css">
+</head>
+<body>
+    <div class="admin-container">
+        <nav class="sidebar">
+            <div class="admin-info">
+                <img src="picture/admin-avatar.png" alt="管理员头像" class="avatar">
+                <span class="admin-name" id="adminUsername">管理员</span>
+                <button onclick="logout()" class="logout-btn">退出登录</button>
+            </div>
+            <ul class="menu">
+                <li class="active" data-section="dashboard"><span>仪表盘</span></li>
+                <li data-section="users"><span>党员管理</span></li>
+                <li data-section="study"><span>学习资料管理</span></li>
+                <li data-section="news"><span>资讯管理</span></li>
+                <li data-section="settings"><span>系统设置</span></li>
+            </ul>
+        </nav>
+        
+        <main class="content">
+            <header class="content-header">
+                <h1>管理员后台</h1>
+                <div class="header-actions">
+                    <span class="date" id="currentDate"></span>
+                </div>
+            </header>
+            
+            <!-- 仪表盘部分 -->
+            <section id="dashboard-section" class="content-section active">
+                <h2>仪表盘</h2>
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <h3>党员总数</h3>
+                        <div class="stat-value" id="totalMembers">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>学习资料</h3>
+                        <div class="stat-value" id="totalStudyMaterials">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>资讯文章</h3>
+                        <div class="stat-value" id="totalNews">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>系统访问量</h3>
+                        <div class="stat-value" id="totalVisits">0</div>
+                    </div>
+                </div>
+                
+                <div class="recent-activity">
+                    <h3>最近活动</h3>
+                    <div class="activity-list" id="recentActivities">
+                        <div class="activity-item">
+                            <span class="activity-time">2023-05-01 10:30</span>
+                            <span class="activity-desc">张三 完成了学习任务《习近平新时代中国特色社会主义思想》</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-time">2023-05-01 09:15</span>
+                            <span class="activity-desc">李四 提交了思想汇报</span>
+                        </div>
+                        <div class="activity-item">
+                            <span class="activity-time">2023-04-30 16:45</span>
+                            <span class="activity-desc">管理员 上传了新的学习资料</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 党员管理部分 -->
+            <section id="users-section" class="content-section">
+                <h2>党员管理</h2>
+                <div class="action-bar">
+                    <button class="add-btn" id="addUserBtn">添加党员</button>
+                    <div class="search-box">
+                        <input type="text" placeholder="搜索党员..." id="searchUser">
+                        <button>搜索</button>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>姓名</th>
+                                <th>党员编号</th>
+                                <th>手机号</th>
+                                <th>部门</th>
+                                <th>职位</th>
+                                <th>入党日期</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="userTableBody">
+                            <!-- 用户数据将通过JS动态加载 -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- 学习资料管理部分 -->
+            <section id="study-section" class="content-section">
+                <h2>学习资料管理</h2>
+                <div class="action-bar">
+                    <button class="add-btn" id="addStudyBtn">添加资料</button>
+                    <div class="search-box">
+                        <input type="text" placeholder="搜索资料..." id="searchStudy">
+                        <button>搜索</button>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>标题</th>
+                                <th>类别</th>
+                                <th>作者</th>
+                                <th>发布日期</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studyTableBody">
+                            <!-- 学习资料数据将通过JS动态加载 -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- 资讯管理部分 -->
+            <section id="news-section" class="content-section">
+                <h2>资讯管理</h2>
+                <div class="action-bar">
+                    <button class="add-btn" id="addNewsBtn">添加资讯</button>
+                    <div class="search-box">
+                        <input type="text" placeholder="搜索资讯..." id="searchNews">
+                        <button>搜索</button>
+                    </div>
+                </div>
+                
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>标题</th>
+                                <th>来源</th>
+                                <th>发布日期</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="newsTableBody">
+                            <!-- 资讯数据将通过JS动态加载 -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- 系统设置部分 -->
+            <section id="settings-section" class="content-section">
+                <h2>系统设置</h2>
+                <div class="settings-container">
+                    <div class="settings-card">
+                        <h3>网站信息</h3>
+                        <form id="siteInfoForm">
+                            <div class="form-group">
+                                <label for="siteName">网站名称</label>
+                                <input type="text" id="siteName" value="党建网站">
+                            </div>
+                            <div class="form-group">
+                                <label for="siteDesc">网站描述</label>
+                                <textarea id="siteDesc">阳春河㙟党建网站</textarea>
+                            </div>
+                            <button type="submit">保存设置</button>
+                        </form>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3>管理员账号</h3>
+                        <form id="adminPasswordForm">
+                            <div class="form-group">
+                                <label for="currentPassword">当前密码</label>
+                                <input type="password" id="currentPassword">
+                            </div>
+                            <div class="form-group">
+                                <label for="newPassword">新密码</label>
+                                <input type="password" id="newPassword">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmPassword">确认新密码</label>
+                                <input type="password" id="confirmPassword">
+                            </div>
+                            <button type="submit">修改密码</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <!-- 添加党员模态框 -->
+    <div class="modal" id="addUserModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('addUserModal')">&times;</span>
+            <h2>添加党员</h2>
+            <form id="addUserForm">
+                <div class="form-group">
+                    <label for="newUsername">党员编号</label>
+                    <input type="text" id="newUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">密码</label>
+                    <input type="password" id="newPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="newRealName">姓名</label>
+                    <input type="text" id="newRealName" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPhone">手机号</label>
+                    <input type="text" id="newPhone" required>
+                </div>
+                <div class="form-group">
+                    <label for="newDepartment">部门</label>
+                    <input type="text" id="newDepartment" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPosition">职位</label>
+                    <input type="text" id="newPosition" required>
+                </div>
+                <div class="form-group">
+                    <label for="newJoinDate">入党日期</label>
+                    <input type="date" id="newJoinDate" required>
+                </div>
+                <button type="submit">添加</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="js/admin-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>河㙟文旅</title>
+    <link rel="stylesheet" href="styles/indexmain.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .carousel-item img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+        }
+        .carousel-caption {
+            background-color: rgba(0,0,0,0.1);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .attraction-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .attraction-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .attraction-card {
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .attraction-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .attraction-card .card-body {
+            padding: 15px;
+        }
+        .attraction-card h5 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .attraction-card p {
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-title">
+            <img src="picture/icons8-锤子和镰刀-96.png" alt="党建logo" class="header-logo">
+            <h1>河㙟文旅</h1>
+        </div>
+        <a href="party-member-login.html" class="login-btn">党员登录</a>
+    </header>
+
+    <nav class="nav">
+        <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="countrynews.html">了解河㙟</a></li>
+            <li><a href="travel.html">河㙟文旅</a></li>
+            <li><a href="map.html">地图介绍</a></li>
+        </ul>
+    </nav>
+
+<!-- 轮播器部分 -->
+<section id="home" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="picture/坚果04.jpg" class="d-block w-100" alt="景点1">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>大岩村农产</h5>
+                <p>星宝坚果</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="picture/坚果种植01.jpg" class="d-block w-100" alt="景点2">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>宝星坚果</h5>
+                <p>种植园</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="picture/凌霄岩.jpg" class="d-block w-100" alt="景点3">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>河㙟文旅</h5>
+                <p>凌霄岩</p>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#home" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">上一张</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#home" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">下一张</span>
+    </button>
+</section>
+
+<!-- 景点推荐部分 -->
+<section id="attractions" class="container py-5">
+    <h2 class="text-center mb-4">河㙟镇文化</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="picture/宝星坚果01.jpg" class="card-img-top" alt="景点1">
+                <div class="card-body">
+                    <h5 class="card-title">星宝坚果厂</h5>
+                    <p class="card-text">车间和坚果脱皮机</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="picture/星宝坚果厂.jpg" class="card-img-top" alt="景点4">
+                <div class="card-body">
+                    <h5 class="card-title">星宝坚果产品</h5>
+                    <p class="card-text">阳春坚果和花蜜</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="picture/茶园03.jpg" class="card-img-top" alt="景点2">
+                <div class="card-body">
+                    <h5 class="card-title">茶园</h5>
+                    <p class="card-text">茶园文化</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="picture/海报1.jpg" class="card-img-top" alt="景点3">
+                <div class="card-body">
+                    <h5 class="card-title">党员干部</h5>
+                    <p class="card-text">大岩村书记和梁子兰奶奶</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="picture/海报2.jpg" class="card-img-top" alt="景点4">
+                <div class="card-body">
+                    <h5 class="card-title">党员干部</h5>
+                    <p class="card-text">党站工作人员和坚果厂厂长</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="picture/海报3.jpg" class="card-img-top" alt="景点5">
+                <div class="card-body">
+                    <h5 class="card-title">河㙟文旅</h5>
+                    <p class="card-text">革命村和坑仔河</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="picture/宣传4.png" class="card-img-top" alt="景点6">
+                <div class="card-body">
+                    <h5 class="card-title">河㙟文旅</h5>
+                    <p class="card-text">文化宣传</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="picture/宣传5.png" class="card-img-top" alt="景点7">
+                <div class="card-body">
+                    <h5 class="card-title">河㙟文旅</h5>
+                    <p class="card-text">文化宣传</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="picture/宣传6.png" class="card-img-top" alt="景点8">
+                <div class="card-body">
+                    <h5 class="card-title">河㙟文旅</h5>
+                    <p class="card-text">文化宣传</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <section class="attraction-section">
+            <h2 class="text-center mb-4">联系我们</h2>
+            <p class="text-center">欢迎您来河㙟镇参观游览，了解更多信息请联系我们的旅游咨询服务。</p>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>版权所有：中国共产党阳春市委员会组织部</p>
+        <p>联系电话：<a href="tel:0662-7870805" class="footer-phone">0662-7870805</a></p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/mobile-nav.js"></script>
+</body>
+</html>

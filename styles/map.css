@@ -1,0 +1,152 @@
+.header {
+    background-color: #c12c1f;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-logo {
+    width: 48px;
+    height: 48px;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.map-container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.map-image {
+    width: 100%;
+    height: auto;
+}
+
+.location-label {
+    position: absolute;
+    background-color: rgba(193, 44, 31, 0.8);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.location-label:hover {
+    background-color: rgba(193, 44, 31, 1);
+}
+
+/* 信息弹出窗样式 */
+.info-popup {
+    position: absolute; /* 绝对定位 */
+    top: 50%;   /* 垂直居中 */
+    left: 50%;  /* 水平居中 */
+    transform: translate(-50%, -50%);   /* 居中 */
+    width: 80%; /* 宽度 */
+    max-width: 600px; /* 最大宽度 */
+    max-height: 80%; /* 最大高度 */
+    overflow: auto; /* 超出部分滚动 */
+    background-color: white;    /* 白色背景 */
+    border-radius: 10px;    /* 圆角 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* 阴影 */
+    z-index: 1050;  /* 层级 */
+    font-family: sans-serif;    /* 字体 */
+}
+
+.info-popup-header {
+    padding: 1rem;  /* 内边距 */
+    background-color: #f8f9fa;  /* 背景颜色 */
+    border-bottom: 1px solid #dee2e6;   /* 底部边框 */
+    display: flex;  /* 弹性布局 */
+    justify-content: space-between; /* 两端对齐 */
+    align-items: center;    /* 垂直居中 */
+    border-top-left-radius: 10px;   /* 圆角 */
+    border-top-right-radius: 10px;  /* 圆角 */
+}
+
+.info-popup-header h5 {
+    margin: 0;  /* 外边距 */
+    font-weight: bold;  /* 加粗 */
+}
+
+.info-popup-body {
+    padding: 1rem;
+    white-space: pre-wrap; /* 保持换行 */
+}
+
+.info-popup-body h6 {
+    font-weight: bold;  /* 加粗 */  
+    color: #333;    /* 深灰色 */
+    margin-top: 1rem;   /* 外边距 */
+}
+
+
+
+.btn-close {
+    background: #ff0000;   /* 红色背景 */
+    border: 1px solid #000000;    /* 1px 实线 黑色 */
+    font-size: 1.5rem;  /* 字体大小 */
+    cursor: pointer;    /* 指针 */
+    color: #000000;    /* 黑色 */
+}
+
+footer {
+    background-color: #c12c1f;
+    color: white;
+    margin-top: auto;
+}
+
+footer a {
+    color: #4e9eff;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
